@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <title>My Film Player</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px 16px;
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+    }
+    main { width: 100%; max-width: 960px; }
+    h1 { font-size: 1.5rem; margin: 8px 0 16px; }
+    .player {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    iframe { width: 100%; height: 100%; border: 0; }
+    p { color: #bbb; line-height: 1.5; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>My Film Player</h1>
+    <div class="player">
+      <iframe
+        src="https://drive.google.com/file/d/1YYPN_Q6c3BUbRzddSF2aW7c8ESZHxMU6/preview"
+        title="Google Drive video player"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p>If the video does not play, make sure the Google Drive file is shared
+       with “Anyone with the link” as a Viewer. Playback may be limited by
+       Google Drive availability or sharing quotas.</p>
+  </main>
+</body>
+</html>
