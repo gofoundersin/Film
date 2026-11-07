@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Movie Night — a personal movie streaming-style website.">
+  <title>Movie Night</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Movie Night home"><span class="brand-icon">▶</span> MOVIE NIGHT</a>
+    <div class="header-actions">
+      <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search movies" aria-label="Search movies"></label>
+      <button class="icon-button" id="themeButton" type="button" aria-label="Toggle theme" title="Toggle theme">☼</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL CINEMA</p>
+        <h1>Find a seat.<br><span>Press play.</span></h1>
+        <p class="hero-copy">Your movie, in one simple place. Select a title below to start watching.</p>
+        <a class="primary-button" href="#movies">Browse movie <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="disc">▶</div><span class="art-star star-one">✦</span><span class="art-star star-two">✧</span></div>
+    </section>
+
+    <section class="section-heading" id="movies">
+      <div><p class="eyebrow">LIBRARY</p><h2>Available movie</h2></div>
+      <span class="count" id="movieCount">1 TITLE</span>
+    </section>
+
+    <section class="movie-grid" id="movieGrid">
+      <article class="movie-card" data-title="Movie Player">
+        <div class="poster">
+          <div class="poster-glow"></div><div class="poster-play">▶</div>
+          <span class="poster-tag">FEATURED</span>
+        </div>
+        <div class="movie-info">
+          <div><h3>Movie Player</h3><p class="meta">Google Drive · Online playback</p></div>
+          <button class="save-button" id="watchlistButton" type="button" aria-pressed="false" title="Add to watchlist">＋</button>
+        </div>
+        <button class="watch-button" id="watchButton" type="button">▶ &nbsp; Watch now</button>
+      </article>
+      <p class="empty-state" id="emptyState" hidden>No movies match your search.</p>
+    </section>
+
+    <section class="watch-section" id="playerSection" hidden>
+      <div class="section-heading player-heading"><div><p class="eyebrow">NOW PLAYING</p><h2>Movie Player</h2></div><button class="secondary-button" id="closePlayer" type="button">Close player ✕</button></div>
+      <div class="video-frame">
+        <iframe id="movieFrame" title="Movie video player" src="https://drive.google.com/file/d/1YYPN_Q6c3BUbRzddSF2aW7c8ESZHxMU6/preview" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="player-actions">
+        <button class="secondary-button" id="reloadButton" type="button">↻ Reload</button>
+        <button class="secondary-button" id="copyVideoButton" type="button">⧉ Copy video link</button>
+        <a class="secondary-button" href="https://drive.google.com/file/d/1YYPN_Q6c3BUbRzddSF2aW7c8ESZHxMU6/view" target="_blank" rel="noopener">↗ Open in Drive</a>
+        <button class="secondary-button" id="shareButton" type="button">↗ Share website</button>
+      </div>
+      <p class="notice" id="statusMessage" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="details-grid">
+      <article class="info-panel"><span class="info-icon">▣</span><h3>Watch online</h3><p>The movie is embedded from Google Drive and plays within this website when Drive allows playback.</p></article>
+      <article class="info-panel"><span class="info-icon">♡</span><h3>Your watchlist</h3><p>Save titles on this device using the plus button. Your saved list stays in this browser.</p></article>
+      <article class="info-panel"><span class="info-icon">ⓘ</span><h3>Playback help</h3><p>Set the Drive file to “Anyone with the link — Viewer”. Google may apply playback or bandwidth limits.</p></article>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> Movie Night</span><span>Only share media you own or are authorized to distribute.</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
